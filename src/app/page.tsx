@@ -1,3 +1,4 @@
+import BarChart from "@/components/BarChart/BarChart";
 import LineChart from "@/components/LineChart/LineChart";
 
 export default function Home() {
@@ -8,6 +9,10 @@ export default function Home() {
         
         <div className="w-[400px] h-[400px]">
           <LineChart />
+        </div>
+
+        <div className="w-[400px] h-[400px]">
+          <BarChart />
         </div>
       </main> 
     </div>

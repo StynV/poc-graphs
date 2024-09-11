@@ -1,11 +1,11 @@
 'use client'
 
-import lineChartData from "@/data/lineChartData"
+import barChartData from "@/data/barChartData"
 import DailyStars from "@/models/DailyStars"
 import { useMemo } from "react"
 import { AxisOptions, Chart } from "react-charts"
 
-const LineChart = () => {
+const BarChart = () => {
     const primaryAxis = useMemo(
         (): AxisOptions<DailyStars> => ({
             getValue: datum => datum.primary,
@@ -16,6 +16,7 @@ const LineChart = () => {
     const secondaryAxes = useMemo(
         (): AxisOptions<DailyStars>[] => [{
             getValue: datum => datum.secondary,
+            elementType: 'bar'
         }],
         []
     )
@@ -23,7 +24,7 @@ const LineChart = () => {
     return (
         <Chart
             options={{
-                data: lineChartData,
+                data: barChartData,
                 primaryAxis,
                 secondaryAxes
             }}
@@ -31,4 +32,4 @@ const LineChart = () => {
     )
 }
 
-export default LineChart
+export default BarChart
